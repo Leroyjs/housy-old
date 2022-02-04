@@ -119,6 +119,16 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/blade-ui-kit/blade-icons" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/blade-ui-kit/blade-heroicons" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/danharrin/date-format-converter" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/danharrin/livewire-rate-limiting" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/filament/tables" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/filament/forms" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/filament/filament" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/akaunting/laravel-money" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/livewire/livewire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
