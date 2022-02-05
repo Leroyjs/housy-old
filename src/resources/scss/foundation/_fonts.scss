@@ -1,0 +1,221 @@
+@use "../global" as *;
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+
+        src: url("#{$file-path}.woff") format("woff"),
+        url("#{$file-path}.woff") format("woff2");
+    }
+}
+
+@mixin font-size($font-size: 12px) {
+    font-size: $font-size;
+
+    @media (min-width: $bp-large) {
+        font-size: #{get-vw($font-size, $bp-large)};
+    }
+}
+
+/* Example include fonts from local file */
+//@include font-face("TTHoves", "../../fonts/TTHoves-Bold", bold);
+//@include font-face("TTHoves", "../../fonts/TTHoves-Medium", medium);
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+$text-colors: (
+    "white": $white,
+    "black": $black,
+    "dark-blue": $dark-blue,
+    "light-blue": $light-blue,
+    "orange": $orange,
+    "light-orange": $light-orange,
+    "pink": $pink,
+    "purpure": $purpure,
+);
+
+.text {
+    color: map-get($text-colors, "black");
+    font-style: normal;
+
+    &_size {
+        &_h1 {
+            font-size: $font-size-24;
+            line-height: 98%;
+        }
+
+        &_h2 {
+            font-size: $font-size-21;
+            line-height: 100%;
+        }
+
+        &_main {
+            font-size: $font-size-8;
+            line-height: 120%;
+        }
+
+        &_desc {
+            font-size: $font-size-5;
+            line-height: 140%;
+        }
+
+        &_small {
+            font-size: $font-size-4;
+            line-height: 140%;
+        }
+
+        &_x-small {
+            font-size: $font-size-3;
+            line-height: 140%;
+        }
+    }
+
+    &_color {
+        @each $color, $val in $text-colors {
+            &_#{$color} {
+                color: $val;
+            }
+        }
+    }
+
+    &_weight {
+        &_medium {
+            font-weight: 400;
+        }
+
+        &_bold {
+            font-weight: bold;
+        }
+    }
+
+    &_uppercase {
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: $desktop-xlg-width) {
+    .text {
+        &_size {
+            &_h1 {
+                font-size: get-vw($font-size-24);
+            }
+
+            &_h2 {
+                font-size: get-vw($font-size-21);
+            }
+
+            &_main {
+                font-size: get-vw($font-size-8);
+            }
+
+            &_desc {
+                font-size: get-vw($font-size-5);
+            }
+
+            &_small {
+                font-size: get-vw($font-size-4);
+            }
+
+            &_x-small {
+                font-size: get-vw($font-size-3);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $desktop-md-width) {
+    .text {
+        &_size {
+            &_h1 {
+                font-size: $font-size-19;
+            }
+
+            &_h2 {
+                font-size: $font-size-17;
+            }
+
+            &_main {
+                font-size: $font-size-7;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $desktop-sm-width) {
+    .text {
+        &_size {
+            &_h2 {
+                font-size: $font-size-15;
+            }
+
+            &_main {
+                font-size: $font-size-7;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-lg-width) {
+    .text {
+        &_size {
+            &_h2 {
+                font-size: $font-size-13;
+            }
+
+            &_main {
+                font-size: $font-size-6;
+            }
+
+            &_desc {
+                font-size: $font-size-4 + 2;
+            }
+
+            &_small {
+                font-size: $font-size-3 + 2;
+            }
+
+            &_x-small {
+                font-size: $font-size-2 + 2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-sm-width) {
+    .text {
+        &_size {
+            &_h1 {
+                font-size: $font-size-15;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $phone-width) {
+    .text {
+        &_size {
+            &_h1 {
+                font-size: $font-size-8 + 2;
+            }
+
+            &_h2 {
+                font-size: $font-size-8 + 2;
+            }
+
+            &_main {
+                font-size: $font-size-4 + 2;
+            }
+
+            &_desc {
+                font-size: $font-size-4;
+            }
+
+            &_small {
+                font-size: $font-size-3;
+            }
+        }
+    }
+}
