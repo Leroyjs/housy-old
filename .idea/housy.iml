@@ -129,6 +129,15 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-package-tools" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/akaunting/laravel-money" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/filament/spatie-laravel-media-library-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/intervention/image" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/league/glide" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/image" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-medialibrary" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/temporary-directory" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/image-optimizer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

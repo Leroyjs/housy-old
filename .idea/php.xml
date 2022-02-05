@@ -123,9 +123,23 @@
       <path value="$PROJECT_DIR$/src/vendor/spatie/laravel-package-tools" />
       <path value="$PROJECT_DIR$/src/vendor/akaunting/laravel-money" />
       <path value="$PROJECT_DIR$/src/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/src/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/src/vendor/filament/spatie-laravel-media-library-plugin" />
+      <path value="$PROJECT_DIR$/src/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/src/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/src/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/src/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/src/vendor/spatie/laravel-medialibrary" />
+      <path value="$PROJECT_DIR$/src/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/src/vendor/spatie/image-optimizer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/src/vendor/autoload.php" />
+    </phpunit_settings>
   </component>
 </project>
