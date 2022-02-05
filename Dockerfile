@@ -20,5 +20,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Install Node.js
 # RUN apt-get install -y nodejs npm
 
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+
 # Set working directory
 WORKDIR /var/www
