@@ -14,7 +14,8 @@ use Filament\Tables;
 class AdditionalResource extends Resource
 {
     protected static ?string $model = Additional::class;
-
+    protected static ?string $label = 'Дополнительная услуга';
+    protected static ?string $pluralLabel = 'Дополнительные услуги';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
