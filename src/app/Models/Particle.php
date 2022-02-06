@@ -9,6 +9,8 @@ class Particle extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title'];
+
     public function particleType()
     {
         return $this->belongsTo(ParticlesType::class, 'particle_type_id');

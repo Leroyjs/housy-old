@@ -15,6 +15,8 @@ class ParticlesTypeResource extends Resource
 {
     protected static ?string $model = ParticlesType::class;
 
+    protected static ?string $label  = 'Тип составляющего пакета';
+    protected static ?string $pluralLabel  = 'Тип составляющих пакета';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
