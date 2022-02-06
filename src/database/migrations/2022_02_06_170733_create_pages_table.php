@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSalePagesTable extends Migration
+class CreatePagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSalePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sale_pages', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->jsonb('info');
+            $table->jsonb('fields');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSalePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sale_pages');
+        Schema::dropIfExists('pages');
     }
 }
