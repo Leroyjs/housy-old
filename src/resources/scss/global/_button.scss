@@ -1,0 +1,114 @@
+@use "../helpers" as *;
+
+.button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border: none;
+
+    transition: background-color .3s, border-color .3s, fill .3s, stroke .3s;
+
+    &_type {
+        &_svg {
+            height: $size-52;
+            width: $size-52;
+            border-radius: 50%;
+            justify-content: center;
+            align-content: center;
+
+            border: 2px solid $white;
+            background-color: $white;
+
+            svg {
+                width: 50%;
+                fill: $orange-1;
+                stroke: $orange-1;
+            }
+        }
+    }
+
+    &_color {
+        &_orange {
+            border-color: $orange-1;
+            background-color: $orange-1;
+
+            svg {
+                fill: $white;
+                stroke: $white;
+            }
+
+            &:hover {
+                border-color: $white;
+                background-color: $white;
+
+                svg {
+                    fill: $orange-1;
+                    stroke: $orange-1;
+                }
+
+            }
+        }
+
+        &_white {
+            border-color: $white;
+            background-color: $white;
+
+            svg {
+                fill: $orange-1;
+                stroke: $orange-1;
+            }
+
+            &:hover {
+                border-color: $orange-1;
+                background-color: $orange-1;
+
+                svg {
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+        }
+
+        &_orange-outline {
+            border-color: $orange-1;
+            background-color: transparent;
+
+            svg {
+                fill: $orange-1;
+                stroke: $orange-1;
+            }
+
+            &:hover {
+                border-color: $orange-1;
+                background-color: $orange-1;
+
+                svg {
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+        }
+
+        &_white-outline {
+            border-color: $white;
+            background-color: transparent;
+
+            svg {
+                fill: $white;
+                stroke: $white;
+            }
+
+            &:hover {
+                border-color: $white;
+                background-color: $white;
+
+                svg {
+                    fill: $orange-1;
+                    stroke: $orange-1;
+                }
+            }
+        }
+    }
+}

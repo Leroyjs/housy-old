@@ -1,0 +1,32 @@
+@use "../helpers" as *;
+
+html {
+    background-color: $white;
+    font-family: $fontMain;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.main-padding {
+    padding-left: $size-80;
+    padding-right: $size-80;
+}
+
+@media screen and (min-width: $desktop-xlg-width) {
+
+}
+
+@media screen and (max-width: $tablet-lg-width) {
+
+}
+
+@media screen and (max-width: $phone-width) {
+
+}
+

@@ -1,0 +1,57 @@
+// colors
+$orange-1: #ff7a00;
+$orange-2: #e76100;
+$black: #333333;
+$gray: #b1b1b1;
+$red: #c92121;
+$white: #ffffff;
+// fonts
+$fontMain: "Montserrat", Arial, sans-serif;
+$fs-8: 8px; // x-small
+$fs-12: 12px; // small
+$fs-16: 16px; // main
+$fs-18: 18px; // main-lg
+$fs-24: 24px; // desc
+$fs-36: 36px; // desc-lg
+$fs-44: 44px; // h3
+$fs-48: 48px; // h2
+$fs-72: 72px; // h1
+
+//base
+$base-x: 4px;
+// size
+$size-8: 2 * $base-x;
+$size-12: 3 * $base-x;
+$size-16: 4 * $base-x;
+$size-20: 5 * $base-x;
+$size-24: 6 * $base-x;
+$size-28: 7 * $base-x;
+$size-32: 8 * $base-x;
+$size-36: 9 * $base-x;
+$size-40: 10 * $base-x;
+$size-44: 11 * $base-x;
+$size-48: 12 * $base-x;
+$size-52: 13 * $base-x;
+$size-56: 14 * $base-x;
+$size-60: 15 * $base-x;
+$size-64: 16 * $base-x;
+$size-68: 17 * $base-x;
+$size-72: 18 * $base-x;
+$size-76: 19 * $base-x;
+$size-80: 20 * $base-x;
+$size-84: 21 * $base-x;
+$size-88: 22 * $base-x;
+$size-92: 23 * $base-x;
+$size-96: 24 * $base-x;
+
+// media
+$desktop-xlg-width: 1920px;
+$desktop-lg-width: 1600px;
+$desktop-md-width: 1440px;
+$desktop-sm-width: 1280px;
+$tablet-lg-width: 1024px;
+$tablet-sm-width: 768px;
+$phone-width: 600px;
+
+//z-index
+$z-index-header: 100;

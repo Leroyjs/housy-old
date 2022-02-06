@@ -17,6 +17,10 @@ mix
     // .postCss('resources/css/app.css', 'public/css', [])
     .version()
     // .copyDirectory('resources/img', 'public/images')
+    .alias({
+        '@': './resources/js',
+        '~': './resources/scss',
+    })
     .browserSync({
         proxy: 'localhost:8000',
         open: false,
