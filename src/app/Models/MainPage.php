@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Page extends Model implements HasMedia
+class MainPage extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
     protected $casts = [
-        'fields' => 'array'
+        'slider' => 'array',
+        'info' => 'array',
     ];
-    protected $fillable = ['title', 'fields'];
+    protected $fillable = ['title', 'slider', 'info'];
 
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('main-slider')
-            ->singleFile()
-        ;
+            ->singleFile();
         $this->addMediaCollection('info-img')
             ->singleFile();
     }
