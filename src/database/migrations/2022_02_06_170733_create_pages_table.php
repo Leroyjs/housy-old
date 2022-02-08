@@ -17,6 +17,7 @@ class CreatePagesTable extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->jsonb('fields');
+            $table->jsonb('info');
             $table->timestamps();
         });
     }
