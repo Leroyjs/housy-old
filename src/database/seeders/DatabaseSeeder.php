@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 //       Tariff::factory(10)->create();
-       MainInfoBlock::factory(10)->create();
-       MainSlider::factory(10)->create();
-       Page::factory(10)->create();
-       Portfolio::factory(10)->create();
-       PortfolioPage::factory(10)->create();
-       SalePage::factory(10)->create();
+//       MainInfoBlock::factory(10)->create();
+//       MainSlider::factory(10)->create();
+//       Page::factory(10)->create();
+//       Portfolio::factory(10)->create();
+//       PortfolioPage::factory(10)->create();
+//       SalePage::factory(10)->create();
     }
 }

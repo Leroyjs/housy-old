@@ -16,8 +16,8 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->jsonb('fields');
-            $table->jsonb('info');
+            $table->jsonb('fields')->nullable();
+            $table->jsonb('info')->nullable();
             $table->timestamps();
         });
     }
