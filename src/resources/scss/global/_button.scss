@@ -22,7 +22,8 @@
             background-color: $white;
 
             svg {
-                width: 50%;
+                height: $fs-18;
+                width: $fs-18;
                 fill: $orange-1;
                 stroke: $orange-1;
             }
@@ -110,5 +111,49 @@
                 }
             }
         }
+    }
+
+    &_size {
+        &_svg-lg {
+            height: $size-104;
+            width: $size-104;
+
+            svg {
+                height: $size-36;
+                width: $size-36;
+            }
+        }
+
+        &_svg-small {
+            height: $size-44;
+            width: $size-44;
+
+            svg {
+                height: $size-16;
+                width: $size-16;
+            }
+        }
+    }
+}
+
+.burger-button {
+    width: $size-44;
+    height: $size-44;
+    cursor: pointer;
+    background-color: $orange-1;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border: none;
+    transition: background-color .3s, border-color .3s, fill .3s, stroke .3s;
+
+    &__svg {
+        fill: $black;
+        stroke: $black;
+        width: $size-16;
+        height: $size-16;
     }
 }

@@ -542,7 +542,8 @@ textarea {
   background-color: #ffffff;
 }
 .button_type_svg svg {
-  width: 50%;
+  height: 18px;
+  width: 18px;
   fill: #ff7a00;
   stroke: #ff7a00;
 }
@@ -609,6 +610,43 @@ textarea {
 .button_color_white-outline:hover svg {
   fill: #ff7a00;
   stroke: #ff7a00;
+}
+.button_size_svg-lg {
+  height: 104px;
+  width: 104px;
+}
+.button_size_svg-lg svg {
+  height: 36px;
+  width: 36px;
+}
+.button_size_svg-small {
+  height: 44px;
+  width: 44px;
+}
+.button_size_svg-small svg {
+  height: 16px;
+  width: 16px;
+}
+
+.burger-button {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background-color: #ff7a00;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: none;
+  transition: background-color 0.3s, border-color 0.3s, fill 0.3s, stroke 0.3s;
+}
+.burger-button__svg {
+  fill: #333333;
+  stroke: #333333;
+  width: 16px;
+  height: 16px;
 }
 
 html {
@@ -1012,6 +1050,38 @@ body {
 
 .first-section {
   background-color: black;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.section__col {
+  min-height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.section__col_lg {
+  flex: 463 0 64%;
+  background-color: #ff7a00;
+}
+.section__col_sm {
+  flex: 257 0 36%;
+  background-color: #333333;
+}
+.section__col_bg_white {
+  background-color: #ffffff;
+}
+.section__col_bg_transparent {
+  background-color: transparent;
+}
+
+.footer {
+  width: 100%;
+  height: 50vh;
 }
 
 .appear-animation, .step, .steps-section__action,
