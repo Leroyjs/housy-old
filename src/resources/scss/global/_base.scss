@@ -140,6 +140,15 @@ main {
     transition: transform 0.3s;
 }
 
+.back-button{
+    display: flex;
+    align-items: center;
+}
+
+.back-button__arrow {
+    margin-right: 16px;
+}
+
 @media screen and (min-width: $desktop-xlg-width) {
 }
 
