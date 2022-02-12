@@ -30,10 +30,6 @@ class PageResource extends Resource
 
     public static function form(Form $form): Form
     {
-//        @todo рефактор
-        $currentUrlParams = \Illuminate\Support\Facades\Route::current()->parameters();
-        $slug = Page::find($currentUrlParams['record'])
-                ->title ?? null;
 
         $defaultFields = [
             TextInput::make('title')
@@ -41,52 +37,9 @@ class PageResource extends Resource
                 ->disabled(),
         ];
 
-        switch ($slug) {
-            case Page::PAGE_ABOUT:
-//                $fields = $this->robotsFields();
-
-                break;
-            case Page::PAGE_BUILDING:
-//                $fields = $this->seoTextFields();
-
-                break;
-            case Page::PAGE_CONTACT:
-//                $fields = $this->shopContactsFields();
-
-                break;
-            case Page::PAGE_PAY:
-//                $fields = $this->defaultOfferPropertiesFields();
-
-                break;
-            case Page::PAGE_PORTFOLIO:
-//                $fields = $this->welcomeScreenFields();
-
-                break;
-            case Page::PAGE_SALE:
-//                $fields = $this->footerMenuSocialNetworks();
-
-                break;
-            case Page::PAGE_TYPICAL_PROJECTS:
-//                $fields = $this->footerMenuInformation();
-
-                break;
-            default:
-                $fields = [];
-
-                break;
-        }
-//
-//        return array_merge($defaultFields, $fields);
-
-        return $form
-            ->schema([
-
-                Repeater::make('fields')
-                    ->schema([
-                        TextInput::make('Заголовок'),
-                        RichEditor::make('Текст'),
-                    ])
-            ]);
+        $housesFields = PageResource::getHousesFields();
+        $aboutFields = PageResource::getAboutFields();
+        return $form->schema(array_merge($defaultFields, $housesFields, $aboutFields));
     }
 
     public static function table(Table $table): Table
@@ -124,25 +77,41 @@ class PageResource extends Resource
         return false;
     }
 
-    private function about()
+    private static function getHousesFields()
     {
-
+        return [Repeater::make('fields')
+            ->label('Информационные блоки')
+            ->schema([
+                TextInput::make('url_text')
+                    ->label('Текст для ссылки'),
+                TextInput::make('url')
+                    ->label('Ссылка'),
+                RichEditor::make('text')
+                    ->label('Текст'),
+            ])->hidden(fn(?Model $record) => $record->title !== 'Портфолио')];
     }
 
-    private function typicalProjectsFields()
+    private static function getAboutFields()
     {
-
+        return [
+            Repeater::make('fields')
+                ->label('Информационные блоки')
+                ->schema([
+                        TextInput::make('title')
+                            ->label('Заголовк'),
+                        RichEditor::make('text')
+                            ->label('Текст'),
+                    ]
+                )->hidden(fn(?Model $record) => $record->title !== 'О компании'),
+            Repeater::make('info')
+                ->label('Информационные блоки справа')
+                ->schema([
+                        TextInput::make('title')
+                            ->label('Заголовк'),
+                        TextInput::make('text')
+                            ->label('Текст'),
+                    ]
+                )->hidden(fn(?Model $record) => $record->title !== 'О компании'),
+        ];
     }
-
-    private function portfolio()
-    {
-
-    }
-
-    private function sale()
-    {
-
-    }
-
-
 }
