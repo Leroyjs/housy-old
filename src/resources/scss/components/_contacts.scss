@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.contacts__title {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: $size-32;
+}
+
+.contacts__list {
+  margin-bottom: $size-32;
+}
+
+.contacts__powerby {
+  margin-top: auto;
+}

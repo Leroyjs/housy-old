@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.menu-layout {
+  display: flex;
+}
+
+.menu-layout__col {
+  padding-top: calc(var(--header-height, 130px) + #{$size-40});
+  padding-bottom: $size-80;
+  height: 100%;
+
+  &_sub {
+    background-color: $black-extra;
+    transition: transform .8s;
+    transform: translateX(-100%);
+  }
+
+  &_main {
+
+  }
+}
+
+.burger-menu.active .menu-layout__col_sub {
+  transform: translateX(0%);
+}

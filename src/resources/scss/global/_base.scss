@@ -1,143 +1,144 @@
 @use "../helpers" as *;
 
 html {
-    background-color: $white;
-    font-family: $fontMain;
+  background-color: $white;
+  font-family: $fontMain;
 }
 
 main {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .main-padding-horizontal {
-    padding-left: $size-80;
-    padding-right: $size-80;
+  padding-left: $size-80;
+  padding-right: $size-80;
 }
 
 .main-padding-vertical {
-    padding-top: $size-80;
-    padding-bottom: $size-80;
+  padding-top: $size-80;
+  padding-bottom: $size-80;
 }
 
 .info-block {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 .sub-height {
-    min-height: 428px;
+  min-height: 428px;
 }
 
 .main-column-width {
-    width: 64%;
+  width: 64%;
 }
 
 .sub-column-width {
-    width: 36%;
+  width: 36%;
 }
 
 .text-arrow {
-    width: 1em;
-    height: 1em;
-    position: relative;
-    display: flex;
-    position: relative;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: flex;
 
-    &:hover {
-        .text-arrow__arrow {
-            transform: translateX(6px);
+  &:hover {
+    .text-arrow__arrow {
+      transform: translateX(6px);
+    }
+  }
+
+  &_color {
+    &_gray {
+      .text-arrow__text {
+        color: $gray;
+      }
+
+      path {
+        stroke: $gray;
+      }
+
+      .text-arrow__inner {
+        &:hover {
+          .text-arrow__text {
+            color: $black;
+          }
+
+          path {
+            stroke: $black;
+          }
         }
+      }
     }
 
-    &_color {
-        &_gray {
-            .text-arrow__text {
-                color: $gray;
-            }
+    &_orange-2 {
+      .text-arrow__text {
+        color: $orange-2;
+      }
 
-            path {
-                stroke: $gray;
-            }
+      path {
+        stroke: $orange-2;
+      }
 
-            .text-arrow__inner {
-                &:hover {
-                    .text-arrow__text {
-                        color: $black;
-                    }
-                    path {
-                        stroke: $black;
-                    }
-                }
-            }
+      .text-arrow__inner {
+        &:hover {
+          .text-arrow__text {
+            color: $white;
+          }
+
+          path {
+            stroke: $white;
+          }
         }
-
-        &_orange-2 {
-            .text-arrow__text {
-                color: $orange-2;
-            }
-
-            path {
-                stroke: $orange-2;
-            }
-
-            .text-arrow__inner {
-                &:hover {
-                    .text-arrow__text {
-                        color: $white;
-                    }
-                    path {
-                        stroke: $white;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .text-arrow__inner {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    path {
-        transition: stroke 0.3s;
+  path {
+    transition: stroke 0.3s;
+  }
+
+  &_rotate {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+
+    .text-arrow__text {
+      margin-right: 0px;
+      margin-left: 12px;
     }
 
-    &_rotate {
-        left: 50%;
-        top: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%) rotate(-90deg);
-        transform-origin: center;
-
-        .text-arrow__text {
-            margin-right: 0px;
-            margin-left: 12px;
-        }
-
-        .text-arrow__arrow {
-            transform: rotate(180deg);
-        }
-
-        &:hover {
-            .text-arrow__arrow {
-                transform: rotate(180deg) translateX(6px);
-            }
-        }
+    .text-arrow__arrow {
+      transform: rotate(180deg);
     }
+
+    &:hover {
+      .text-arrow__arrow {
+        transform: rotate(180deg) translateX(6px);
+      }
+    }
+  }
 }
 
 .text-arrow__text {
-    white-space: nowrap;
-    margin-right: 12px;
-    transition: color 0.3s;
+  white-space: nowrap;
+  margin-right: 12px;
+  transition: color 0.3s;
 }
 
 .text-arrow__arrow {
-    transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 @media screen and (min-width: $desktop-xlg-width) {

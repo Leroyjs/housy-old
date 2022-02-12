@@ -1,0 +1,28 @@
+@use "../helpers" as *;
+
+.logo {
+  height: $size-32;
+
+  &_color {
+    &_white {
+      .logo__title {
+        fill: $white;
+      }
+    }
+
+    &_black {
+      .logo__title {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.logo__title {
+  transition: fill .3s ease;
+}
+
+
+.open-menu .logo__title {
+  fill: $white;
+}

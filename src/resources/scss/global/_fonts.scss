@@ -1,11 +1,11 @@
 @use "../helpers" as *;
 
 @mixin font-size($font-size: 12px) {
-    font-size: $font-size;
+  font-size: $font-size;
 
-    @media (min-width: $bp-large) {
-        font-size: #{get-vw($font-size, $bp-large)};
-    }
+  @media (min-width: $bp-large) {
+    font-size: #{get-vw($font-size, $bp-large)};
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
@@ -18,86 +18,92 @@
  */
 
 $text-colors: (
-    "orange-1": $orange-1,
-    "orange-2": $orange-2,
-    "black": $black,
-    "gray": $gray,
-    "red": $red,
-    "white": $white,
+  "orange-1": $orange-1,
+  "orange-2": $orange-2,
+  "black": $black,
+  "gray": $gray,
+  "red": $red,
+  "white": $white,
 );
 
 .text {
-    color: map-get($text-colors, "black");
-    font-style: normal;
+  color: map-get($text-colors, "black");
+  font-style: normal;
 
-    &_size {
-        &_h1 {
-            font-size: $fs-72;
-            line-height: 120%;
-        }
+  &_align {
+    &_right {
+      text-align: right;
+    }
+  }
 
-        &_h2 {
-            font-size: $fs-48;
-            line-height: 122%;
-        }
-
-        &_h3 {
-            font-size: $fs-44;
-            line-height: 122%;
-        }
-
-        &_main {
-            font-size: $fs-16;
-            line-height: 175%;
-        }
-
-        &_main-lg {
-            font-size: $fs-18;
-            line-height: 122%;
-        }
-
-        &_desc-lg {
-            font-size: $fs-36;
-            line-height: 122%;
-        }
-
-        &_desc {
-            font-size: $fs-24;
-            line-height: 120%;
-        }
-
-        &_small {
-            font-size: $fs-12;
-            line-height: 125%;
-        }
-
-        &_x-small {
-            font-size: $fs-8;
-            line-height: 125%;
-        }
+  &_size {
+    &_h1 {
+      font-size: $fs-72;
+      line-height: 120%;
     }
 
-    &_color {
-        @each $color, $val in $text-colors {
-            &_#{$color} {
-                color: $val;
-            }
-        }
+    &_h2 {
+      font-size: $fs-48;
+      line-height: 122%;
     }
 
-    &_weight {
-        &_medium {
-            font-weight: 400;
-        }
-
-        &_bold {
-            font-weight: bold;
-        }
+    &_h3 {
+      font-size: $fs-44;
+      line-height: 122%;
     }
 
-    &_uppercase {
-        text-transform: uppercase;
+    &_main {
+      font-size: $fs-16;
+      line-height: 175%;
     }
+
+    &_main-lg {
+      font-size: $fs-18;
+      line-height: 122%;
+    }
+
+    &_desc-lg {
+      font-size: $fs-36;
+      line-height: 122%;
+    }
+
+    &_desc {
+      font-size: $fs-24;
+      line-height: 120%;
+    }
+
+    &_small {
+      font-size: $fs-12;
+      line-height: 125%;
+    }
+
+    &_x-small {
+      font-size: $fs-8;
+      line-height: 125%;
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_medium {
+      font-weight: 400;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+
+  &_uppercase {
+    text-transform: uppercase;
+  }
 }
 
 @media screen and (min-width: $desktop-xlg-width) {

@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-nav__logo {
+  height: $size-40;
+  margin-bottom: $size-64;
+  align-self: flex-start;
+}
+
+.footer-nav__list {
+
+}
+
+.footer-nav__item {
+  & + & {
+    margin-top: $size-12;
+  }
+}
