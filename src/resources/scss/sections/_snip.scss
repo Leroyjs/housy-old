@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.snip {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    background-image: url("../../../storage/app/public/front-img/snip-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.snip__main-column {
+    background-color: $orange-1;
+    position: relative;
+    display: flex;
+}
+
+.snip__main-column {
+    padding-top: 46px;
+}
+
+.snip__title {
+    margin-bottom: 16px;
+}
+
+.snip__desc {
+    max-width: 520px;
+}
+
+.snip__arrow {
+    bottom: 50%;
+    position: absolute;
+    right: 0;
+    transform: translate(50%, 100%);
+
+    &::after {
+        content: "показать дома";
+        white-space: nowrap;
+        position: absolute;
+        right: -16px;
+        transform: translateX(100%);
+    }
+}
+.snip__text-arrow {
+    align-self: center;
+    margin-right: $size-80;
+}

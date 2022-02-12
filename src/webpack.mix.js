@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-const path = require('path');
+const mix = require("laravel-mix");
+const path = require("path");
 const glob = require("glob");
 
 /*
@@ -18,26 +18,29 @@ mix
     .version()
     // .copyDirectory('resources/img', 'public/images')
     .alias({
-        '@': './resources/js',
-        '~': './resources/scss',
+        "@": "./resources/js",
+        "~": "./resources/scss",
+        $: "./storage/app/public",
     })
     .browserSync({
-        proxy: 'localhost:8000',
+        proxy: "localhost:8000",
         open: false,
     });
 
-
 (function getEntryJs() {
-    glob.sync('resources/views/**/index.js')
-        .forEach((file) => {
-            const name = file.match(/\/views\/(.+)\/index.js/)[1];
-            const inputPath = path.resolve('resources/views/', name, 'index.js');
-            const outputPath = path.resolve('public/', name);
+    glob.sync("resources/views/**/index.js").forEach((file) => {
+        const name = file.match(/\/views\/(.+)\/index.js/)[1];
+        const inputPath = path.resolve("resources/views/", name, "index.js");
+        const outputPath = path.resolve("public/", name);
 
-            const inputPathCss = path.resolve('resources/views/', name, 'index.scss');
-            const outputPathCss = path.resolve('public/', name, 'index.css');
+        const inputPathCss = path.resolve(
+            "resources/views/",
+            name,
+            "index.scss"
+        );
+        const outputPathCss = path.resolve("public/", name, "index.css");
 
-            mix.js(inputPath, outputPath);
-            mix.sass(inputPathCss, outputPathCss);
-        });
-})()
+        mix.js(inputPath, outputPath);
+        mix.sass(inputPathCss, outputPathCss);
+    });
+})();

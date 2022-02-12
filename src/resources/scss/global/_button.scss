@@ -4,11 +4,10 @@
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    overflow: hidden;
     position: relative;
     border: none;
 
-    transition: background-color .3s, border-color .3s, fill .3s, stroke .3s;
+    transition: background-color 0.3s, border-color 0.3s, fill 0.3s, stroke 0.3s;
 
     &_type {
         &_svg {
@@ -48,7 +47,6 @@
                     fill: $orange-1;
                     stroke: $orange-1;
                 }
-
             }
         }
 
@@ -148,7 +146,7 @@
     justify-content: center;
     flex: 0 0 auto;
     border: none;
-    transition: background-color .3s, border-color .3s, fill .3s, stroke .3s;
+    transition: background-color 0.3s, border-color 0.3s, fill 0.3s, stroke 0.3s;
 
     &__svg {
         fill: $black;

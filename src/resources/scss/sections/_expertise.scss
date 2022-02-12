@@ -1,0 +1,16 @@
+@use "../helpers" as *;
+
+.expertise__main-column {
+    background-image: url("../../../storage/app/public/front-img/expertise-img.jpg");
+}
+
+.expertise__sub-column {
+    background-color: $orange-1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.expertise__desc {
+    margin-top: 16px;
+}
