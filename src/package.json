@@ -16,6 +16,7 @@
         "laravel-mix": "^6.0.6",
         "laravel-mix-alias": "^1.0.3",
         "postcss": "^8.1.14",
+        "prettier": "^2.5.1",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.49.7",
         "sass-loader": "^12.4.0"

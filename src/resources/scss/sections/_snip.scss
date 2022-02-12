@@ -14,9 +14,6 @@
     background-color: $orange-1;
     position: relative;
     display: flex;
-}
-
-.snip__main-column {
     padding-top: 46px;
 }
 
@@ -42,6 +39,7 @@
         transform: translateX(100%);
     }
 }
+
 .snip__text-arrow {
     align-self: center;
     margin-right: $size-80;

@@ -45,7 +45,6 @@ main {
     height: 1em;
     position: relative;
     display: flex;
-    position: relative;
 }
 
 .text-arrow__inner {
@@ -60,6 +59,7 @@ main {
         .text-arrow__text {
             color: $white;
         }
+
         path {
             stroke: $white;
         }
