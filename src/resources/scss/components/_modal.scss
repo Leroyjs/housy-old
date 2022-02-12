@@ -1,0 +1,56 @@
+@use "../helpers/index" as *;
+
+.modal {
+  z-index: $z-index-modal;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  transition: opacity .5s, transform .5s;
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #333333;
+    opacity: 0.9;
+  }
+}
+
+.modal__inner {
+  position: relative;
+  width: 100%;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: $size-24;
+  width: $size-24;
+  cursor: pointer;
+  transition: transform .3s;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
