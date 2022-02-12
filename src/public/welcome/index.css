@@ -696,6 +696,33 @@ main {
   display: flex;
   position: relative;
 }
+.text-arrow:hover .text-arrow__arrow {
+  transform: translateX(6px);
+}
+.text-arrow_color_gray .text-arrow__text {
+  color: #b1b1b1;
+}
+.text-arrow_color_gray path {
+  stroke: #b1b1b1;
+}
+.text-arrow_color_gray .text-arrow__inner:hover .text-arrow__text {
+  color: #333333;
+}
+.text-arrow_color_gray .text-arrow__inner:hover path {
+  stroke: #333333;
+}
+.text-arrow_color_orange-2 .text-arrow__text {
+  color: #e76100;
+}
+.text-arrow_color_orange-2 path {
+  stroke: #e76100;
+}
+.text-arrow_color_orange-2 .text-arrow__inner:hover .text-arrow__text {
+  color: #ffffff;
+}
+.text-arrow_color_orange-2 .text-arrow__inner:hover path {
+  stroke: #ffffff;
+}
 
 .text-arrow__inner {
   display: flex;
@@ -703,12 +730,6 @@ main {
 }
 .text-arrow__inner path {
   transition: stroke 0.3s;
-}
-.text-arrow__inner:hover .text-arrow__text {
-  color: #ffffff;
-}
-.text-arrow__inner:hover path {
-  stroke: #ffffff;
 }
 .text-arrow__inner_rotate {
   left: 50%;
@@ -724,11 +745,18 @@ main {
 .text-arrow__inner_rotate .text-arrow__arrow {
   transform: rotate(180deg);
 }
+.text-arrow__inner_rotate:hover .text-arrow__arrow {
+  transform: rotate(180deg) translateX(6px);
+}
 
 .text-arrow__text {
   white-space: nowrap;
   margin-right: 12px;
   transition: color 0.3s;
+}
+
+.text-arrow__arrow {
+  transition: transform 0.3s;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1270,7 +1298,8 @@ body {
 }
 
 .snip__main-column {
-  padding-top: 46px;
+  display: flex;
+  align-items: center;
 }
 
 .snip__title {
@@ -1313,6 +1342,54 @@ body {
 
 .expertise__desc {
   margin-top: 16px;
+}
+
+.mission__sub-column {
+  background-image: url(/images/mission-img.jpg?e602da05dc37d59d5888d3bba6b2be7c);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mission__overlay {
+  background-color: #1a1a1a;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.mission__content {
+  position: relative;
+}
+
+.mission__sub-column-text {
+  margin-bottom: 65px;
+}
+
+.mission__main-column {
+  display: flex;
+  align-items: center;
+}
+
+.mission__text-arrow {
+  margin-right: 80px;
+}
+
+.mission__desc {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.mission__desc-link {
+  transition: color 0.3s;
+}
+.mission__desc-link:hover {
+  color: #e76100;
 }
 
 .appear-animation, .step, .steps-section__action,

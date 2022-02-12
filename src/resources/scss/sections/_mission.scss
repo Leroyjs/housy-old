@@ -1,0 +1,50 @@
+@use "../helpers" as *;
+
+.mission__sub-column {
+    background-image: url("../../../storage/app/public/front-img/mission-img.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mission__overlay {
+    background-color: #1a1a1a;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.mission__content {
+    position: relative;
+}
+
+.mission__sub-column-text {
+    margin-bottom: 65px;
+}
+
+.mission__main-column {
+    display: flex;
+    align-items: center;
+}
+
+.mission__text-arrow {
+    margin-right: $size-80;
+}
+
+.mission__desc {
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.mission__desc-link {
+    transition: color 0.3s;
+
+    &:hover {
+        color: $orange-2;
+    }
+}

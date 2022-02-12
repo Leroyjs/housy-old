@@ -46,6 +46,56 @@ main {
     position: relative;
     display: flex;
     position: relative;
+
+    &:hover {
+        .text-arrow__arrow {
+            transform: translateX(6px);
+        }
+    }
+
+    &_color {
+        &_gray {
+            .text-arrow__text {
+                color: $gray;
+            }
+
+            path {
+                stroke: $gray;
+            }
+
+            .text-arrow__inner {
+                &:hover {
+                    .text-arrow__text {
+                        color: $black;
+                    }
+                    path {
+                        stroke: $black;
+                    }
+                }
+            }
+        }
+
+        &_orange-2 {
+            .text-arrow__text {
+                color: $orange-2;
+            }
+
+            path {
+                stroke: $orange-2;
+            }
+
+            .text-arrow__inner {
+                &:hover {
+                    .text-arrow__text {
+                        color: $white;
+                    }
+                    path {
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .text-arrow__inner {
@@ -54,15 +104,6 @@ main {
 
     path {
         transition: stroke 0.3s;
-    }
-
-    &:hover {
-        .text-arrow__text {
-            color: $white;
-        }
-        path {
-            stroke: $white;
-        }
     }
 
     &_rotate {
@@ -80,6 +121,12 @@ main {
         .text-arrow__arrow {
             transform: rotate(180deg);
         }
+
+        &:hover {
+            .text-arrow__arrow {
+                transform: rotate(180deg) translateX(6px);
+            }
+        }
     }
 }
 
@@ -87,6 +134,10 @@ main {
     white-space: nowrap;
     margin-right: 12px;
     transition: color 0.3s;
+}
+
+.text-arrow__arrow {
+    transition: transform 0.3s;
 }
 
 @media screen and (min-width: $desktop-xlg-width) {
