@@ -4,8 +4,9 @@ services:
     # PHP service
     app:
         build: .
-        container_name: php-app
+        container_name: php-app_dev
         working_dir: /var/www/
+        user: "www-data:www-data"
         volumes:
             - ./src:/var/www
         networks:
@@ -14,7 +15,7 @@ services:
     # MySQL database service
     db:
         image: mysql:5.7
-        container_name: mysql-db
+        container_name: mysql-db_dev
         ports:
             - "3307:3307"
         environment:
@@ -30,7 +31,7 @@ services:
     # Nginx service
     nginx:
         image: nginx:alpine
-        container_name: php-nginx
+        container_name: php-nginx_dev
         ports:
             - 8000:80
         volumes:
