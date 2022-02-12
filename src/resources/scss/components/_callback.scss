@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.callback {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.callback__title {
+  display: inline-block;
+  color: $white;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  margin-right: $size-24;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+
+  &.active {
+    display: inline-block;
+  }
+}
+
+.callback__img {
+  flex-shrink: 0;
+}
+
+.open-menu .callback__title {
+  pointer-events: auto;
+  opacity: 1;
+}

@@ -8,7 +8,6 @@
 /***/ (() => {
 
 window.addEventListener('DOMContentLoaded', function () {});
-
 /***/ })
 
 /******/ 	});
