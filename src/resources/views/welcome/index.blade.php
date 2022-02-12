@@ -137,7 +137,10 @@
             </div>
         </section>
         <section class="info-block sub-height">
+            <div class="main-column-width">
 
+            </div>
+            <div class="sub-column-width"></div>
         </section>
         <footer class="footer">
             <div class="section">
