@@ -76,7 +76,7 @@ $text-colors: (
       font-size: $fs-12;
       line-height: 125%;
     }
-
+    
     &_x-small {
       font-size: $fs-8;
       line-height: 125%;
@@ -94,6 +94,10 @@ $text-colors: (
   &_weight {
     &_medium {
       font-weight: 400;
+    }
+    
+    &_semi-bold {
+      font-weight: 600;
     }
 
     &_bold {

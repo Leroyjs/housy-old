@@ -14,6 +14,8 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Routing\Route;
 
 class PageResource extends Resource
 {
@@ -21,21 +23,23 @@ class PageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+//    public function __construct()
+//    {
+//
+//    }
+
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                TextInput::make('title')
-                    ->label('Название страницы')
-//                @todo расскомментить
-//                    ->disabled()
-                ,
-                Repeater::make('fields')
-                    ->schema([
-                        TextInput::make('Заголовок'),
-                        RichEditor::make('Текст'),
-                    ])
-            ]);
+
+        $defaultFields = [
+            TextInput::make('title')
+                ->label('Название страницы')
+                ->disabled(),
+        ];
+
+        $housesFields = PageResource::getHousesFields();
+        $aboutFields = PageResource::getAboutFields();
+        return $form->schema(array_merge($defaultFields, $housesFields, $aboutFields));
     }
 
     public static function table(Table $table): Table
@@ -62,8 +66,52 @@ class PageResource extends Resource
     {
         return [
             'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
+//            'create' => Pages\CreatePage::route('/create'),
             'edit' => Pages\EditPage::route('/{record}/edit'),
+        ];
+    }
+
+    //@todo так можем запрещать удалять запись
+    public static function canDelete(Model $record): bool
+    {
+        return false;
+    }
+
+    private static function getHousesFields()
+    {
+        return [Repeater::make('fields')
+            ->label('Информационные блоки')
+            ->schema([
+                TextInput::make('url_text')
+                    ->label('Текст для ссылки'),
+                TextInput::make('url')
+                    ->label('Ссылка'),
+                RichEditor::make('text')
+                    ->label('Текст'),
+            ])->hidden(fn(?Model $record) => $record->title !== 'Портфолио')];
+    }
+
+    private static function getAboutFields()
+    {
+        return [
+            Repeater::make('fields')
+                ->label('Информационные блоки')
+                ->schema([
+                        TextInput::make('title')
+                            ->label('Заголовк'),
+                        RichEditor::make('text')
+                            ->label('Текст'),
+                    ]
+                )->hidden(fn(?Model $record) => $record->title !== 'О компании'),
+            Repeater::make('info')
+                ->label('Информационные блоки справа')
+                ->schema([
+                        TextInput::make('title')
+                            ->label('Заголовк'),
+                        TextInput::make('text')
+                            ->label('Текст'),
+                    ]
+                )->hidden(fn(?Model $record) => $record->title !== 'О компании'),
         ];
     }
 }

@@ -1,0 +1,7 @@
+@charset "UTF-8";
+@use "./resources/scss/global";
+
+/* List of sections used on this page: */
+@use "./resources/scss/sections/header";
+@use "./resources/scss/sections/list-info-block";
+@use "./resources/scss/components/animations";
