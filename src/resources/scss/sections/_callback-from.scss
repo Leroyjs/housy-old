@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+@use "../components/modal";
+
+.callback-from {
+
+}
+
+.callback-from__title {
+  color: $white;
+  font-weight: bold;
+  margin-bottom: $size-40;
+}
+
+.callback-from__subtitle {
+  color: $white;
+  margin-bottom: $size-40;
+}
+
+.callback-from__form {
+  margin-bottom: $size-40;
+}
+
+.callback-from__call {
+
+}
+
+.callback-from__link {
+  display: inline-block;
+  font-size: 54px;
+  margin-top: $size-24;
+}

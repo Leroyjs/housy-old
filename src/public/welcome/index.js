@@ -127,6 +127,102 @@ var initHeader = function initHeader() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initHeader);
 
+/***/ }),
+
+/***/ "./resources/js/components/modal.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/modal.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var initModals = function initModals() {
+  var modals = document.querySelectorAll(".modal");
+  var modalLinks = document.querySelectorAll("[data-modal]");
+
+  var _iterator = _createForOfIteratorHelper(modalLinks),
+      _step;
+
+  try {
+    var _loop = function _loop() {
+      var modalLink = _step.value;
+      modalLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        var modalId = modalLink.dataset.modal;
+        if (!modalId) return;
+        modals.forEach(function (modal) {
+          console.log(modal.id);
+          if (modal.id != modalId) return;
+          openModal(modal);
+        });
+      });
+    };
+
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      _loop();
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  function openModal(modal) {
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  var _iterator2 = _createForOfIteratorHelper(modals),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var modal = _step2.value;
+      initModal(modal);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+};
+
+var initModal = function initModal(modalEl) {
+  if (!modalEl) return;
+  var closeBtn = modalEl.querySelector('.modal__close');
+  var bodyEl = document.body;
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('keydown', handleEscape);
+
+  function handleEscape(e) {
+    var isOpenModal = modalEl.classList.contains('active');
+
+    if (e.key === 'Escape' && isOpenModal) {
+      e.preventDefault();
+      closeModal();
+    }
+  }
+
+  function closeModal() {
+    var isOpenModal = modalEl.classList.contains('active');
+    var isNoScroll = bodyEl.classList.contains('no-scroll');
+    if (isOpenModal) modalEl.classList.remove('active');
+    if (isNoScroll) bodyEl.classList.remove('no-scroll');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initModals);
+
 /***/ })
 
 /******/ 	});
@@ -209,7 +305,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_common__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../js/components/header */ "./resources/js/components/header.js");
 /* harmony import */ var _js_components_burgerMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../js/components/burgerMenu */ "./resources/js/components/burgerMenu.js");
+/* harmony import */ var _js_components_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/components/modal */ "./resources/js/components/modal.js");
 /* import common js */
+
 
 
 
@@ -218,6 +316,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", function () {
   (0,_js_components_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_js_components_burgerMenu__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_js_components_modal__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 window.addEventListener("load", function () {});
 })();

@@ -14,7 +14,7 @@
       @include ('particles.logo', ['className' => 'header__logo', 'type' => 'home'])
     </a>
 
-    <button class="callback">
+    <button class="callback" data-modal="modal-call-to-action">
       <p class="callback__title text text_size_desc">
         +7 (343) 382 - 80 - 03
       </p>
